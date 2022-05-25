@@ -19,19 +19,19 @@ public class PutzProcessor {
         Zimmer balkon = new Zimmer("Balkon");
 
         //Der Küche Dinge zuordnen, die in Ihr geputzt werden müssen.
-        DingZuPutzen kuehlschrank = new DingZuPutzen("Kuehlschrank");
+        DingZuPutzen kuehlschrank = new DingZuPutzen("Kuehlschrank", 60);
         try{
             kueche.DingZuPutzenHinzuFuegen(kuehlschrank);
         }catch (IllegalArgumentException e){
             System.out.println(e);
         }
-        DingZuPutzen ofen = new DingZuPutzen("Ofen");
+        DingZuPutzen ofen = new DingZuPutzen("Ofen", 90);
         try{
             kueche.DingZuPutzenHinzuFuegen(ofen);
         }catch (IllegalArgumentException e){
             System.out.println(e);
         }
-        DingZuPutzen schraenke = new DingZuPutzen("Schraenke");
+        DingZuPutzen schraenke = new DingZuPutzen("Schraenke", 90);
         try{
             kueche.DingZuPutzenHinzuFuegen(schraenke);
         }catch (IllegalArgumentException e){

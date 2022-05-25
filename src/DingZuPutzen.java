@@ -1,15 +1,20 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 public class DingZuPutzen {
 
-    private static final long PUTZEN_FAELLIG_NACH_TAGEN = 7;
+    private long tageBisZumPutzen;
     private String name;
     private LocalDate zuletztGeputzt;
 
-    public DingZuPutzen(String name){
+    /**
+     * KOnstrukter für ein Ding, was auch mal geputzt werden muss und einem Zimmer zugeordnet werden kann
+     * @param name
+     * @param tageBisZumPutzen
+     */
+    public DingZuPutzen(String name, long tageBisZumPutzen){
         this.name = name;
+        this.tageBisZumPutzen = tageBisZumPutzen;
     }
 
     /**
@@ -19,7 +24,7 @@ public class DingZuPutzen {
      */
     public boolean mussGeputztWerden(LocalDate today){
         long tageSeitLetztemPutzen = ChronoUnit.DAYS.between(zuletztGeputzt, today);
-        if(tageSeitLetztemPutzen >= PUTZEN_FAELLIG_NACH_TAGEN ){
+        if(tageSeitLetztemPutzen >= tageBisZumPutzen){
             return true;
         }else{
             return false;
