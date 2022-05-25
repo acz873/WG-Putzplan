@@ -29,7 +29,7 @@ public class Zimmer {
     /**
      * checkt ob das Zimmer mal wieder geputzt werden muss
      * @param today
-     * @return false wenn es erst vor kurzem geputzt wurde, true wenn es mal wieder geputzt werden sollte
+     * @return false, wenn es erst vor kurzem geputzt wurde. true, wenn es mal wieder geputzt werden sollte
      */
     public boolean mussGeputztWerden(LocalDate today){
         long tageSeitLetztemPutzen = ChronoUnit.DAYS.between(zuletztGeputzt, today);
