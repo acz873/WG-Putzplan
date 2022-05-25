@@ -8,9 +8,11 @@ public class Zimmer {
     private String name;
     private LocalDate zuletztGeputzt;
     private Set<DingZuPutzen> DingeZuPutzen;
+    private Mitbewohner putzDienst;
 
-    public Zimmer(String name){
+    public Zimmer(String name, Mitbewohner putzDienst){
         this.name = name;
+        this.putzDienst = putzDienst;
         zuletztGeputzt = LocalDate.now();
         DingeZuPutzen = new HashSet<>();
     }
@@ -63,5 +65,13 @@ public class Zimmer {
 
     public Set<DingZuPutzen> getDingeZuPutzen() {
         return DingeZuPutzen;
+    }
+
+    public Mitbewohner getPutzDienst() {
+        return putzDienst;
+    }
+
+    public void setPutzDienst(Mitbewohner putzDienst) {
+        this.putzDienst = putzDienst;
     }
 }

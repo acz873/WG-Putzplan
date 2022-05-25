@@ -7,16 +7,18 @@ public class PutzProcessor {
 
     public static void main(String[] args) {
 
-        Mitbewohner serafin = new Mitbewohner("Serafin");
-        Mitbewohner luca = new Mitbewohner("Luca");
-        Mitbewohner lennart = new Mitbewohner("Lennart");
-        Mitbewohner leonard = new Mitbewohner("Leonard");
+        Mitbewohner[] bewohner = {
+            new Mitbewohner("Serafin"),
+            new Mitbewohner("Luca"),
+            new Mitbewohner("Lennart"),
+            new Mitbewohner("Leonard")
+        };
 
-        Zimmer kueche = new Zimmer("Kueche");
-        Zimmer bad = new Zimmer("Bad");
-        Zimmer flur = new Zimmer("Flur");
-        Zimmer klo = new Zimmer("Klo");
-        Zimmer balkon = new Zimmer("Balkon");
+        Zimmer kueche = new Zimmer("Kueche", bewohner[1]);
+        Zimmer bad = new Zimmer("Bad", bewohner[2]);
+        Zimmer flur = new Zimmer("Flur", bewohner[3]);
+        Zimmer klo = new Zimmer("Klo", bewohner[4]);
+        Zimmer balkon = new Zimmer("Balkon", bewohner[1]);
 
         //Der Küche Dinge zuordnen, die in Ihr geputzt werden müssen.
         DingZuPutzen kuehlschrank = new DingZuPutzen("Kuehlschrank", 60);
@@ -48,6 +50,11 @@ public class PutzProcessor {
         LocalDate today;
         while(true){
             today = LocalDate.now();
+            for(Zimmer z: alleZimmer){
+                if(z.mussGeputztWerden(today)){
+
+                }
+            }
 
 
             try{
